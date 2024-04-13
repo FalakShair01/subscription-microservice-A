@@ -1,4 +1,5 @@
-```markdown
+
+---
 # Subscription Microservice
 
 This microservice is responsible for managing subscriptions. It communicates with Service B to synchronize subscription status updates.
@@ -18,30 +19,30 @@ subscription_microservice/
 │
 ├── model/
 │   ├── __init__.py
-│   └── models.py           # SQLAlchemy models for database tables
+│   └── models.py         # SQLAlchemy models for database tables
 │
 ├── routers/
 │   ├── __init__.py
-│   └── subscription.py    # FastAPI routers for handling subscription endpoints
+│   └── subscription.py   # FastAPI routers for handling subscription endpoints
 │
 ├── schemas/
 │   ├── __init__.py
-│   └── schema.py          # Pydantic schemas for request and response data
+│   └── schema.py         # Pydantic schemas for request and response data
 │
 ├── dependencies/
 │   ├── __init__.py
 │   └── subscription_service.py  # Business logic for subscription management
 │
-├── main.py                 # FastAPI application setup
-├── README.md              # Documentation file
-└── requirements.txt       # Project dependencies
+├── main.py               # FastAPI application setup
+├── README.md             # Documentation file
+└── requirements.txt      # Project dependencies
 ```
 
 ## Workflow
 
 1. **Request Handling**: FastAPI routers in the `routers` directory handle incoming HTTP requests.
 2. **Business Logic**: The business logic for subscription management is implemented in the `subscription_service.py` module inside the `dependencies` directory.
-3. **Database Interaction**: Database operations are managed by functions in the `database.py` module inside the `config` directory. SQLAlchemy models for database tables are defined in the `model.py` module inside the `models` directory.
+3. **Database Interaction**: Database operations are managed by functions in the `database.py` module inside the `config` directory. SQLAlchemy models for database tables are defined in the `models.py` module inside the `model` directory.
 4. **Request/Response Data**: Pydantic schemas for request and response data are defined in the `schema.py` module inside the `schemas` directory.
 
 ## Setup
@@ -72,4 +73,4 @@ subscription_microservice/
 
 - Ensure that Service B is running and accessible to synchronize subscription status updates using RabbitMQ.
 - Update the database configuration in `config/database.py` as needed.
-```
+---
