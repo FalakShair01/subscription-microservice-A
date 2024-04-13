@@ -1,3 +1,4 @@
+"""This file contain the routers"""
 from fastapi import APIRouter, Depends, HTTPException
 from config.database import get_db
 from sqlalchemy.orm import Session

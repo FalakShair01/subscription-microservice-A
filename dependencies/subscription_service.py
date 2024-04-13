@@ -1,3 +1,4 @@
+"""This File contains the Business logic or crud functionality"""
 from sqlalchemy.orm import Session
 from model import models
 from fastapi import HTTPException
@@ -47,5 +48,4 @@ def delete_subscription(db: Session, subscription: models.Subscription):
         db.commit()
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
 

@@ -1,3 +1,4 @@
+"""  This module contains the main FastAPI application setup."""
 from fastapi import FastAPI
 from config.database import SessionLocal, engine
 from model import models

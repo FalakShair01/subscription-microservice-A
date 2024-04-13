@@ -1,3 +1,4 @@
+"""This file contain the Pydantic Schemas for Subscription"""
 from pydantic import BaseModel
 
 class SubscriptionBase(BaseModel):    
@@ -11,4 +12,3 @@ class Subscription(SubscriptionBase):
 
     class Config:
         orm_mode = True
-

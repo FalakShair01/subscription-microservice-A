@@ -1,3 +1,4 @@
+"""This File contain the Table"""
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
 from config.database import Base
 
