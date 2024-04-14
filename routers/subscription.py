@@ -49,9 +49,9 @@ async def update_subscription(subscription_id: int, request: schema.UpdateSubscr
         return subscription_instance
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-    finally:
+ #   finally:
         # Close RabbitMQ connection 
-        rabbitmq.close_connection()
+  #      rabbitmq.close_connection()
 
 @router.delete('/subscriptions/{subscription_id}', summary="Delete a subscription")
 async def delete_subscription(subscription_id: int, db: Session = Depends(get_db)):
