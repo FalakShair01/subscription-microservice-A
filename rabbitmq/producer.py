@@ -3,7 +3,7 @@ import pika
 from schemas import schema
 
 class RabbitMQ:
-    """This class will publish Event"""
+    """This class will publish message and close connection"""
     def __init__(self, host='localhost'):
         self.connection = pika.BlockingConnection(pika.ConnectionParameters(host))
         self.channel = self.connection.channel()
