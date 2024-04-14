@@ -45,8 +45,7 @@ async def update_subscription(subscription_id: int, request: schema.UpdateSubscr
         raise HTTPException(status_code=404, detail="Subscription not found")
     try:
         subscription_instance = subscription_service.update_subscription(db, subscription, is_active=request.is_active)
-        message = {'email': subscription_instance.email, 'is_active': subscription_instance.is_active}
-        rabbitmq.publish_message(message)
+        rabbitmq.publish_message(subscription_instance)
         return subscription_instance
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
