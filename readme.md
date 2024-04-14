@@ -1,4 +1,5 @@
-```markdown
+
+---
 # Subscription Microservice
 
 This microservice is responsible for managing subscriptions. It communicates with Service B to synchronize subscription status updates.
@@ -72,4 +73,4 @@ subscription_microservice/
 
 - Ensure that Service B is running and accessible to synchronize subscription status updates using RabbitMQ.
 - Update the database configuration in `config/database.py` as needed.
-```
+---
