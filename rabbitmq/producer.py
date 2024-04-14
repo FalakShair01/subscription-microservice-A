@@ -13,7 +13,7 @@ class RabbitMQ:
     def publish_message(self, subscription_update: schema.Subscription):
         email = subscription_update.email
         is_active = subscription_update.is_active
-        self.channel.basic_publish(exchange=self.exchange_name, routing_key=email, body="hello")
+        self.channel.basic_publish(exchange=self.exchange_name, routing_key=email, body={'email': email, 'is_active': is_active})
     
     def close_connection(self):
         if self.connection.is_open:
