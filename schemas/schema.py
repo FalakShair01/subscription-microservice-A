@@ -6,9 +6,11 @@ class SubscriptionBase(BaseModel):
     is_active: bool
 
 
-
 class Subscription(SubscriptionBase):
     id: int
 
     class Config:
         orm_mode = True
+
+class UpdateSubscription(BaseModel):    
+    is_active: bool
