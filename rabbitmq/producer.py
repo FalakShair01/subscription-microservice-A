@@ -12,10 +12,7 @@ class RabbitMQ:
 
     def publish_message(self, subscription_update: schema.Subscription):
         email = subscription_update.email
-        if isinstance(email, slice):  # Check if email is a slice object
-            email = str(email)
-        message = {'email': email, 'is_active': subscription_update.is_active}
-        self.channel.basic_publish(exchange=self.exchange_name, routing_key=email, body=message)
+        self.channel.basic_publish(exchange=self.exchange_name, routing_key=email, body="hello")
     
     def close_connection(self):
         if self.connection.is_open:
