@@ -11,7 +11,7 @@ class RabbitMQ:
         self.channel.exchange_declare(exchange=self.exchange_name, exchange_type='direct')
 
     def publish_message(self, subscription_update: schema.Subscription):
-        message = subscription_update.model_dump()
+        message = {'email':subscription_update.email, 'is_active': subscription_update.is_active}
         self.channel.basic_publish(exchange=self.exchange_name, routing_key=subscription_update.email, body=message)
     
     def close_connection(self):
